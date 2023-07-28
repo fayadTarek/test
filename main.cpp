@@ -1,22 +1,37 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 enum Cases{bleu, red};
+struct color
+{
+    Cases color;
+    string colorNam;
+};
+
 
 int main (){
-    Cases c =bleu;
+
+    color reed;
+    reed.colorNam = "red";
+    reed.color = red;
+
+    color bluee;
+    bluee.colorNam = "bleu";
+    bluee.color = bleu;
+
+    color c ;
     int g(0);
     do
     {
         cout << "Enter a number beteuin 0 and 1 :";
         cin >> g;  
     } while (g < 0 || g > 1);
-    
-    c =(Cases) g;
-
-    if(c == bleu)
-        cout << "Hello it's blue!";
+    if(g == 0 )
+        c = bluee;
     else
-     cout << "Hello it's red!";
+        c = reed;
+
+    cout << "Hello it's " << c.colorNam<< " !" << endl;
     return 0;
 }
